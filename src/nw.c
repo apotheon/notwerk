@@ -1,11 +1,8 @@
-#include <libgen.h>
-#include <limits.h>
-#include <stdio.h>
-#include <string.h>
+#include "cli.h"
 
 int main(int argc, char **argv) {
 	const char *program = *(argv);
-	printf("USAGE: %s\n", basename(strndup(program, PATH_MAX)));
+	puts(usage_text(program));
 
 	return 0;
 }
