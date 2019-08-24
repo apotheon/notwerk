@@ -11,4 +11,4 @@
 
 #endif
 
-char *usage_text(char *self);
+char *usage_text(const char *self);
