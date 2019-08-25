@@ -11,5 +11,6 @@
 
 #endif
 
+char *help_text();
 char *try_text(const char *self);
 char *usage_text(const char *self);
