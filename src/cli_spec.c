@@ -3,7 +3,7 @@
 
 spec("CLI") {
 	describe("match_cmd()") {
-		char *target_string = "help-me";
+		char *target_string = "help";
 		int cmdsize = sizeof(*target_string);
 
 		it("should return true with a command match") {
