@@ -7,4 +7,12 @@ spec("cli") {
 			check(strncmp(usage_text("nw"), "USAGE: nw", LINESIZE) == 0);
 		}
 	}
+
+	describe("try_text()") {
+		it("should return try text") {
+			char *try_text_string = "Try \"nw help\" for more info.";
+			puts(try_text("nw"));
+			check(strncmp(try_text("nw"), try_text_string, LINESIZE) == 0);
+		}
+	}
 }
