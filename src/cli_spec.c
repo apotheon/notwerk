@@ -2,6 +2,19 @@
 #include "cli.h"
 
 spec("CLI") {
+	describe("match_cmd()") {
+		char *target_string = "help-me";
+		int cmdsize = sizeof(*target_string);
+
+		it("should return true with a command match") {
+			char *cmd = calloc(LINESIZE, cmdsize);
+
+			strlcpy(cmd, target_string, cmdsize);
+			check(match_cmd(cmd, target_string) == true);
+			free(cmd);
+		}
+	}
+
 	describe("help_text()") {
 		it("should return help text") {
 			check(strstr(help_text(), "Display this help message."));
