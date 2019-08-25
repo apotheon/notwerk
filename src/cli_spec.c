@@ -3,7 +3,7 @@
 
 spec("CLI") {
 	describe("match_cmd()") {
-		char *target_string = "help";
+		const char *target_string = "help";
 		int cmdsize = sizeof(*target_string);
 
 		it("should return true with a command match") {
@@ -11,7 +11,6 @@ spec("CLI") {
 
 			strlcpy(cmd, target_string, cmdsize);
 			check(match_cmd(cmd, target_string) == true);
-			free(cmd);
 		}
 
 		it("should return false with a command mismatch") {

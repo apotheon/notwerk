@@ -12,7 +12,7 @@
 
 #endif
 
-bool match_cmd(char *cmd, char *cmdtarget);
+bool match_cmd(char *cmd, const char *cmdtarget);
 
 char *help_text();
 char *try_text(const char *self);
