@@ -13,6 +13,11 @@ spec("CLI") {
 			check(match_cmd(cmd, target_string) == true);
 			free(cmd);
 		}
+
+		it("should return false with a command mismatch") {
+			char *cmd = "help-me";
+			check(match_cmd(cmd, target_string) == false);
+		}
 	}
 
 	describe("help_text()") {
