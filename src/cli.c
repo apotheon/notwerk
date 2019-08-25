@@ -1,5 +1,10 @@
 #include "cli.h"
 
+bool match_cmd(char *cmd, char *cmdtarget) {
+	if (strncmp(cmd, cmdtarget, strnlen(cmd, LINESIZE)) == 0) return true;
+	else return false;
+}
+
 char *help_text() {
 	char *text = (
 		"\n"
