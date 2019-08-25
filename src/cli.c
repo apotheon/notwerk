@@ -1,6 +1,6 @@
 #include "cli.h"
 
-bool match_cmd(char *cmd, char *cmdtarget) {
+bool match_cmd(char *cmd, const char *cmdtarget) {
 	if (strncmp(cmd, cmdtarget, strnlen(cmd, LINESIZE)) == 0) return true;
 	else return false;
 }
