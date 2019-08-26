@@ -19,6 +19,28 @@ spec("CLI") {
 		}
 	}
 
+	describe("match_help()") {
+		it("should return false with incorrect help command") {
+			check(match_help("help-me") == false);
+		}
+
+		it("should return false with incorrect help option") {
+			check(match_help("--help-me") == false);
+		}
+
+		it("should return false with non-help command") {
+			check(match_help("start") == false);
+		}
+
+		it("should return true with correct help commands") {
+			check(match_help("h") && match_help("help"));
+		}
+
+		it("should return true with correct help options") {
+			check(match_help("-h") && match_help("--help"));
+		}
+	}
+
 	describe("help_text()") {
 		it("should return help text") {
 			check(strstr(help_text(), "Display this help message."));
