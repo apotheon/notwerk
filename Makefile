@@ -6,3 +6,5 @@ commit:
 sync:
 	@fossil sync
 	@fossgit
+
+up: commit sync
