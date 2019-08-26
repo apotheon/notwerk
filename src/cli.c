@@ -47,3 +47,9 @@ char *usage_text(const char *self) {
 
 	return assemble_string(strlist);
 }
+
+void print_help(const char *self) {
+	puts("");
+	puts(usage_text(self));
+	puts(help_text());
+}
