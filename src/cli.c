@@ -53,3 +53,8 @@ void print_help(const char *self) {
 	puts(usage_text(self));
 	puts(help_text());
 }
+
+void print_invalid_cmd(const char *self, const char *cmd) {
+	printf("invalid command: %s\n", cmd);
+	puts(try_text(self));
+}
