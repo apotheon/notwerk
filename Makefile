@@ -4,6 +4,10 @@ help:
 	@echo ' commit m=MESSAGE     commit to Fossil repo with specified message'
 	@echo ' sync                 sync committed changes and push mirrors'
 	@echo ' up m=MESSAGE         commit and sync with specified message'
+	@echo
+	@echo ' test                 run all specs'
+	@echo ' testcli              run CLI spec'
+	@echo ' testutil             run Util spec'
 
 commit:
 	@fossil commit -m '$(m)'
