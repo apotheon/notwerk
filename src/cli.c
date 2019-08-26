@@ -16,12 +16,7 @@ char *help_text() {
 	return text;
 }
 
-char *try_text(const char *self) {
-	const char **strlist = calloc(3, sizeof(strlist));
-	*(strlist + 0) = "Try \"";
-	*(strlist + 1) = self;
-	*(strlist + 2) = " help\" for more info.";
-
+char *assemble_string(const char **strlist) {
 	size_t listsize = strlist_size(3, strlist);
 	char *text = calloc(listsize, sizeof(text));
 
@@ -35,11 +30,20 @@ char *try_text(const char *self) {
 	return text;
 }
 
-char *usage_text(const char *self) {
-	char *text = calloc(LINESIZE, sizeof(*text));
-	strlcpy(text, "USAGE: ", LINESIZE);
-	strlcat(text, self, LINESIZE);
-	strlcat(text, " <COMMAND>", LINESIZE);
+char *try_text(const char *self) {
+	const char **strlist = calloc(3, sizeof(strlist));
+	*(strlist + 0) = "Try \"";
+	*(strlist + 1) = self;
+	*(strlist + 2) = " help\" for more info.";
 
-	return text;
+	return assemble_string(strlist);
+}
+
+char *usage_text(const char *self) {
+	const char **strlist = calloc(3, sizeof(strlist));
+	*(strlist + 0) = "USAGE: ";
+	*(strlist + 1) = self;
+	*(strlist + 2) = " <COMMAND>";
+
+	return assemble_string(strlist);
 }
