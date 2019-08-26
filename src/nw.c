@@ -7,7 +7,7 @@ int main(int argc, char **argv) {
 		char *cmd = *(argv + 1);
 
 		if (match_cmd(cmd, "help")) print_help(program);
-		else printf("invalid command: %s\n", cmd);
+		else print_invalid_cmd(program, cmd);
 	} else {
 		puts(usage_text(program));
 		puts(try_text(program));
