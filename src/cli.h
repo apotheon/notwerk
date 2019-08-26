@@ -22,3 +22,4 @@ char *usage_text(const char *self);
 
 void print_help(const char *self);
 void print_invalid_cmd(const char *self, const char *cmd);
+void print_no_cmd(const char *self);

@@ -58,3 +58,8 @@ void print_invalid_cmd(const char *self, const char *cmd) {
 	printf("invalid command: %s\n", cmd);
 	puts(try_text(self));
 }
+
+void print_no_cmd(const char *self) {
+	puts(usage_text(self));
+	puts(try_text(self));
+}
