@@ -1,8 +1,15 @@
 #include "cli.h"
 
 bool match_cmd(char *cmd, const char *cmdtarget) {
-	if (strncmp(cmd, cmdtarget, strnlen(cmd, LINESIZE)) == 0) return true;
+	if (strncmp(cmd, cmdtarget, strnlen(cmd, 1000)) == 0) return true;
 	else return false;
+}
+
+bool match_help(char *cmd) {
+	return (
+		match_cmd(cmd, "--help") || match_cmd(cmd, "-h") ||
+		match_cmd(cmd, "help") || match_cmd(cmd, "h")
+	);
 }
 
 char *help_text() {
