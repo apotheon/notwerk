@@ -8,6 +8,8 @@ help:
 	@echo ' test                 run all specs'
 	@echo ' testcli              run CLI spec'
 	@echo ' testutil             run Util spec'
+	@echo
+	@echo ' try                  try basic nw commands to view output'
 
 commit:
 	@fossil commit -m '$(m)'
@@ -29,3 +31,23 @@ testutil:
 	@rm a.out
 
 test: testcli testutil
+
+try:
+	@$(CC) src/nw.c src/cli.c src/util.c
+	@echo ' --------------'
+	@echo '| NO ARGUMENTS |'
+	@echo ' --------------'
+	@a.out; echo
+	@echo -n '==========================='
+	@echo '==========================='
+	@echo ' --------------'
+	@echo '| HELP COMMAND |'
+	@echo ' --------------'
+	@a.out help; echo
+	@echo -n '==========================='
+	@echo '==========================='
+	@echo ' -----------------'
+	@echo '| INVALID COMMAND |'
+	@echo ' -----------------'
+	@a.out bogus; echo
+	@rm a.out
