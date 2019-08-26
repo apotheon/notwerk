@@ -14,6 +14,7 @@
 #endif
 
 bool match_cmd(char *cmd, const char *cmdtarget);
+bool match_help(char *cmd);
 
 char *help_text();
 char *try_text(const char *self);
