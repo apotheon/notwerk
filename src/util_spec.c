@@ -2,6 +2,19 @@
 #include "util.h"
 
 spec("Util") {
+	describe("assemble_string()") {
+		it("should assemble one string from three strings") {
+			const char *target_string = "foobarbaz";
+
+			const char **strlist = calloc(3, sizeof(strlist));
+			*(strlist + 0) = "foo";
+			*(strlist + 1) = "bar";
+			*(strlist + 2) = "baz";
+
+			check(strstr(assemble_string(strlist), target_string));
+		}
+	}
+
 	describe("strlist_size()") {
 		it("should return 200 for 5 4-char strings") {
 			const char **strlist = calloc(5 * 5, sizeof(strlist));
