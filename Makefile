@@ -23,3 +23,5 @@ testutil:
 	@$(CC) src/util_spec.c src/util.c
 	@a.out
 	@rm a.out
+
+test: testcli testutil
