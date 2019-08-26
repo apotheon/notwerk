@@ -1,5 +1,19 @@
 #include "util.h"
 
+char *assemble_string(const char **strlist) {
+	size_t listsize = strlist_size(3, strlist);
+	char *text = calloc(listsize, sizeof(text));
+
+	size_t remaining_length = listsize;
+
+	for (int i = 0; i < 3; ++i) {
+		strlcat(text, *(strlist + i), remaining_length);
+		remaining_length -= strlen(*(strlist + i));
+	}
+
+	return text;
+}
+
 size_t strlist_size(uint64_t n, const char **stringlist) {
 	size_t total = 0;
 

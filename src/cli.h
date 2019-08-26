@@ -15,7 +15,6 @@
 
 bool match_cmd(char *cmd, const char *cmdtarget);
 
-char *assemble_string(const char **strlist);
 char *help_text();
 char *try_text(const char *self);
 char *usage_text(const char *self);
