@@ -19,6 +19,19 @@ spec("CLI") {
 		}
 	}
 
+	describe("assemble_string()") {
+		it("should assemble one string from three strings") {
+			const char *target_string = "foobarbaz";
+
+			const char **strlist = calloc(3, sizeof(strlist));
+			*(strlist + 0) = "foo";
+			*(strlist + 1) = "bar";
+			*(strlist + 2) = "baz";
+
+			check(strstr(assemble_string(strlist), target_string));
+		}
+	}
+
 	describe("help_text()") {
 		it("should return help text") {
 			check(strstr(help_text(), "Display this help message."));
