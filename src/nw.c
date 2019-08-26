@@ -6,13 +6,8 @@ int main(int argc, char **argv) {
 	if (argc > 1) {
 		char *cmd = *(argv + 1);
 
-		if (match_cmd(cmd, "help")) {
-			puts("");
-			puts(usage_text(program));
-			puts(help_text());
-		} else {
-			printf("invalid command: %s\n", cmd);
-		}
+		if (match_cmd(cmd, "help")) print_help(program);
+		else printf("invalid command: %s\n", cmd);
 	} else {
 		puts(usage_text(program));
 		puts(try_text(program));
