@@ -4,10 +4,10 @@
 spec("CLI") {
 	describe("match_cmd()") {
 		const char *target_string = "help";
-		int cmdsize = sizeof(*target_string);
+		int cmdsize = sizeof(target_string);
 
 		it("should return true with a command match") {
-			char *cmd = calloc(LINESIZE, cmdsize);
+			char *cmd = calloc(strlen(target_string), cmdsize);
 
 			strlcpy(cmd, target_string, cmdsize);
 			check(match_cmd(cmd, target_string) == true);
@@ -38,6 +38,10 @@ spec("CLI") {
 
 		it("should return true with correct help options") {
 			check(match_help("-h") && match_help("--help"));
+		}
+
+		it("should return false with partial help command") {
+			check(match_help("--he") == false)
 		}
 	}
 

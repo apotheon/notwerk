@@ -1,14 +1,17 @@
 #include "cli.h"
 
 bool match_cmd(char *cmd, const char *cmdtarget) {
-	if (strncmp(cmd, cmdtarget, strnlen(cmd, 1000)) == 0) return true;
+	int comparison = strncmp(cmd, cmdtarget, strnlen(cmd, 1000));
+	int lengthmatch = (strnlen(cmd, 1000) == strnlen(cmdtarget, 1000));
+
+	if (lengthmatch && (comparison == 0)) return true;
 	else return false;
 }
 
 bool match_help(char *cmd) {
 	return (
-		match_cmd(cmd, "--help") || match_cmd(cmd, "-h") ||
-		match_cmd(cmd, "help") || match_cmd(cmd, "h")
+		match_cmd(cmd, "-h") || match_cmd(cmd, "--help") ||
+		match_cmd(cmd, "h") || match_cmd(cmd, "help")
 	);
 }
 
