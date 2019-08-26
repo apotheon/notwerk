@@ -10,6 +10,8 @@ int main(int argc, char **argv) {
 			puts("");
 			puts(usage_text(program));
 			puts(help_text());
+		} else {
+			printf("invalid command: %s\n", cmd);
 		}
 	} else {
 		puts(usage_text(program));
