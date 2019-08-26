@@ -13,3 +13,8 @@ sync:
 	@fossgit
 
 up: commit sync
+
+testcli:
+	@$(CC) src/cli_spec.c src/cli.c src/util.c
+	@a.out
+	@rm a.out
