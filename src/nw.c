@@ -9,8 +9,7 @@ int main(int argc, char **argv) {
 		if (match_cmd(cmd, "help")) print_help(program);
 		else print_invalid_cmd(program, cmd);
 	} else {
-		puts(usage_text(program));
-		puts(try_text(program));
+		print_no_cmd(program);
 	}
 
 	return 0;
