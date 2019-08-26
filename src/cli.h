@@ -19,3 +19,5 @@ char *assemble_string(const char **strlist);
 char *help_text();
 char *try_text(const char *self);
 char *usage_text(const char *self);
+
+void print_help(const char *self);
