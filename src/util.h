@@ -3,4 +3,4 @@
 #include <stdlib.h>
 #include <string.h>
 
-size_t strlist_size(uint64_t n, char **stringlist);
+size_t strlist_size(uint64_t n, const char **stringlist);

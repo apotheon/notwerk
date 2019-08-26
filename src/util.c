@@ -1,6 +1,6 @@
 #include "util.h"
 
-size_t strlist_size(uint64_t n, char **stringlist) {
+size_t strlist_size(uint64_t n, const char **stringlist) {
 	size_t total = 0;
 
 	for (uint64_t i = 0;  i < n; ++i) {
