@@ -32,7 +32,7 @@ char *try_text(const char *self) {
 	*(strlist + 1) = self;
 	*(strlist + 2) = " help\" for more info.";
 
-	return assemble_string(strlist);
+	return assemble_string(3, strlist);
 }
 
 char *usage_text(const char *self) {
@@ -41,7 +41,7 @@ char *usage_text(const char *self) {
 	*(strlist + 1) = self;
 	*(strlist + 2) = " <COMMAND>";
 
-	return assemble_string(strlist);
+	return assemble_string(3, strlist);
 }
 
 void print_help(const char *self) {
