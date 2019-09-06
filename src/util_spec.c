@@ -11,7 +11,7 @@ spec("Util") {
 			*(strlist + 1) = "bar";
 			*(strlist + 2) = "baz";
 
-			check(strstr(assemble_string(strlist), target_string));
+			check(strstr(assemble_string(3, strlist), target_string));
 		}
 	}
 
