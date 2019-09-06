@@ -6,7 +6,7 @@ int main(int argc, char **argv) {
 	if (argc > 1) {
 		char *cmd = *(argv + 1);
 
-		if (match_cmd(cmd, "help")) print_help(program);
+		if (match_help(cmd)) print_help(program);
 		else print_invalid_cmd(program, cmd);
 	} else {
 		print_no_cmd(program);
