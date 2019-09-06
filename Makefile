@@ -1,5 +1,8 @@
 CC?=clang -std=c99
 
+default:
+	$(CC) -o nw src/nw.c src/cli.c src/util.c
+
 help:
 	@echo
 	@echo 'USAGE: make [command [args]]'
