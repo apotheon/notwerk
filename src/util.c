@@ -25,3 +25,9 @@ size_t strlist_size(uint64_t n, const char **stringlist) {
 
 	return total;
 }
+
+void *clear_alloc(size_t datalength, size_t datasize) {
+	const char **allocated_object = calloc(datalength, datasize);
+	if (allocated_object == NULL) errx(1, "calloc");
+	return allocated_object;
+}
