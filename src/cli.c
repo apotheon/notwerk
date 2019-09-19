@@ -36,7 +36,7 @@ char *try_text(const char *self) {
 }
 
 char *usage_text(const char *self) {
-	const char **strlist = calloc(3, sizeof(strlist));
+	const char **strlist = clear_alloc(3, sizeof(strlist));
 	*(strlist + 0) = "USAGE: ";
 	*(strlist + 1) = self;
 	*(strlist + 2) = " <COMMAND>";
