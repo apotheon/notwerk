@@ -2,7 +2,7 @@
 
 char *assemble_string(uint16_t listlen, const char **strlist) {
 	size_t listsize = strlist_size(listlen, strlist);
-	char *text = calloc(listsize, sizeof(text));
+	char *text = clear_alloc(listsize, sizeof(text));
 
 	size_t remaining_length = listsize;
 
