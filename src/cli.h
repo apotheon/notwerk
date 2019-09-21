@@ -13,13 +13,13 @@
 
 #endif
 
-bool match_cmd(char *cmd, const char *cmdtarget);
-bool match_help(char *cmd);
+bool match_cmd(char *, const char *);
+bool match_help(char *);
 
 char *help_text();
-char *try_text(const char *self);
-char *usage_text(const char *self);
+char *try_text(const char *);
+char *usage_text(const char *);
 
-void print_help(const char *self);
-void print_invalid_cmd(const char *self, const char *cmd);
-void print_no_cmd(const char *self);
+void print_help(const char *);
+void print_invalid_cmd(const char *, const char *);
+void print_no_cmd(const char *);
